@@ -59,6 +59,7 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
 | **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
 | **nodadyoushutup-compose** | `plugins/compose/` | Docker Compose layout/ops + destructive gates |
+| **nodadyoushutup-classifier** | `plugins/classifier/` | Classifier MCP craft: destructive-command gate hook + discrete decision consult |
 | **nodadyoushutup-framework** | `plugins/framework/` | Framework monorepo craft (addons, Docker ops, parity, ceremony hooks) |
 | **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
 | **nodadyoushutup-proxmox** | `plugins/proxmox/` | Proxmox VE inventory + gated VM ops |
@@ -73,7 +74,7 @@ short (`code-*`, `global-*`, …).
 Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
 `/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
 `/github`, `/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`,
-`/vault`, `/grafana`, `/cloudflare`, `/compose`, `/framework`, `/kubernetes`, `/proxmox`,
+`/vault`, `/grafana`, `/cloudflare`, `/compose`, `/classifier`, `/framework`, `/kubernetes`, `/proxmox`,
 `/argocd`, `/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 
 ## Catalog paths

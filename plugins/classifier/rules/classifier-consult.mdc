@@ -1,0 +1,49 @@
+---
+description: >-
+  Default: consult the attached classifier MCP for ambiguous destructive commands
+  and discrete coding decisions. Discover the MCP namespace; never hardcode a
+  host or invent a call. Skip entirely when no classifier MCP is attached.
+alwaysApply: true
+---
+
+# Classifier consult
+
+The session may attach a **classifier** MCP — a small decision model ("kev/jev")
+that returns a probability per typed question. Treat it as a signal, not an
+oracle, and as optional infrastructure.
+
+## Gate
+
+If no classifier MCP is attached to this session, **skip this rule** — no
+classifier calls. Use the deterministic rules already in `code-workflow` and
+`global-execute-first`, and continue normally. A missing classifier is not a
+blocker.
+
+## Discover (once per session)
+
+1. List the session's MCP tools.
+2. Find the namespace whose tools build a state+question decision call — names
+   like `kev_gate`, `*_choose`, `*_score`, `*_ask`, `*_status`, or a raw
+   `/systemone` passthrough. The exact namespace varies per host; do not assume.
+3. Cache it for the session. Never hardcode a host, port, URL, or key.
+
+## Default
+
+- **Destructive commands**: the attached `beforeShellExecution` hook consults the
+  classifier automatically; you do not need to call it yourself. Deterministic
+  deny rules always run first and always win.
+- **Discrete decisions** (tier, subagent pick, scope, rerank): narrow options
+  with the written rules first, then consult the classifier only for the
+  ambiguous middle. Load `classifier-decisions` for thresholds.
+- **Short state only** — a command line, a diff hunk, a one-line ask. Long states
+  degrade confidence.
+- **Confidence, not argmax** — act above the per-type threshold; escalate or take
+  the deterministic default below it.
+
+## Refuse
+
+- Never fabricate probabilities, answers, or an MCP that is not attached.
+- Never put secrets, tokens, credentials, or private payloads into classifier
+  state.
+- Never let the classifier override a deterministic safety rule.
+- Never block or wedge work waiting on the classifier — fail open and continue.

@@ -1,0 +1,26 @@
+{
+  "name": "nodadyoushutup-classifier",
+  "description": "Decision-model craft for coding: consult an attached classifier MCP for destructive-command gating and discrete decisions (tier, subagent, scope, rerank).",
+  "version": "0.10.0",
+  "author": {
+    "name": "nodadyoushutup",
+    "email": "admin@nodadyoushutup.com"
+  },
+  "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+  "repository": "https://github.com/nodadyoushutup/marketplace-public",
+  "license": "MIT",
+  "keywords": [
+    "classifier",
+    "kev",
+    "jev",
+    "decision",
+    "hooks",
+    "gating",
+    "rules",
+    "skills",
+    "commands",
+    "mcp"
+  ],
+  "skills": "./skills",
+  "commands": "./commands"
+}

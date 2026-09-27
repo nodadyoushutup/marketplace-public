@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "command": "${CURSOR_PLUGIN_ROOT}/hooks/classifier-destructive-gate.py",
+        "timeout": 5,
+        "failClosed": false
+      }
+    ]
+  }
+}

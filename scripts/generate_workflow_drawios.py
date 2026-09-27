@@ -129,6 +129,19 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "list → change&#10;create/update via MCP;&#10;safety on delete/bulk",
         "end_ok": "END — FQDN + type&#10;+ content (no tokens)",
     },
+    "classifier": {
+        "title": "Classifier Workflow",
+        "ambient": (
+            "AMBIENT — decision MCP&#10;&#10;"
+            "Discover namespace&#10;never hardcode host&#10;&#10;"
+            "Rules first, always win&#10;Classifier = second opinion&#10;&#10;"
+            "Short state only&#10;fail open if unattached"
+        ),
+        "gate": "gate · classifier MCP&#10;attached this session?&#10;destructive / ambiguous ask",
+        "skip": "skip — no classifier&#10;use deterministic rules;&#10;do not invent a call",
+        "act": "rules → classifier&#10;hook gates shell;&#10;MCP for tier/scope/rerank",
+        "end_ok": "END — decision +&#10;confidence (or default)",
+    },
     "compose": {
         "title": "Compose Workflow",
         "ambient": (

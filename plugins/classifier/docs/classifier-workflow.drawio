@@ -1,0 +1,70 @@
+<!-- LAYOUT CONTRACT
+     LEGEND    x=40..300
+     AMBIENT   x=40..300 (below legend)
+     LEFT      x=400..720 — skip / END skip
+     SPINE     x=780..1160 — gate → act → END
+     BUSES: x=350 skip drain
+-->
+<mxfile host="app.diagrams.net" agent="cursor" version="24.0.0">
+  <diagram id="classifier-workflow" name="Classifier Workflow">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="legend" value="Legend&#10;&#10;Boxes&#10;blue = work phase&#10;green = finish&#10;gray = START / END / skip&#10;&#10;Lines&#10;black = next step&#10;green = skip / finish" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="260" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="ambient" value="AMBIENT — decision MCP&#10;&#10;Discover namespace&#10;never hardcode host&#10;&#10;Rules first, always win&#10;Classifier = second opinion&#10;&#10;Short state only&#10;fail open if unattached" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
+          <mxGeometry x="40" y="300" width="260" height="320" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="start" value="START — user ask" style="ellipse;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="780" y="40" width="380" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="gate" value="gate · classifier MCP&#10;attached this session?&#10;destructive / ambiguous ask" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="780" y="160" width="380" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="skip" value="skip — no classifier&#10;use deterministic rules;&#10;do not invent a call" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="400" y="160" width="320" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="act" value="rules → classifier&#10;hook gates shell;&#10;MCP for tier/scope/rerank" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+          <mxGeometry x="780" y="320" width="380" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_ok" value="END — decision +&#10;confidence (or default)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#12401A" parent="1" vertex="1">
+          <mxGeometry x="780" y="490" width="380" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="end_skip" value="END — stay out" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
+          <mxGeometry x="400" y="490" width="320" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_start_gate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0" parent="1" source="start" target="gate" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_gate_skip" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366;exitX=0;exitY=0.5;entryX=1;entryY=0.5" parent="1" source="gate" target="skip" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="chip_skip" value="no" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333333" parent="1" vertex="1">
+          <mxGeometry x="730" y="195" width="40" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_gate_act" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0" parent="1" source="gate" target="act" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="chip_yes" value="yes" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#333333" parent="1" vertex="1">
+          <mxGeometry x="920" y="278" width="40" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_act_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366;exitX=0.5;exitY=1;entryX=0.5;entryY=0" parent="1" source="act" target="end_ok" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_skip_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;jumpStyle=arc;jumpSize=10;strokeColor=#82b366;exitX=0.5;exitY=1;entryX=0.5;entryY=0" parent="1" source="skip" target="end_skip" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="215"/>
+              <mxPoint x="350" y="540"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

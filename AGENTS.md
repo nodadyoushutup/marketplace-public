@@ -46,6 +46,7 @@ Commands follow the same rule **except** short slash UX names documented below
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
 | `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
 | `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` |
+| `classifier` | `nodadyoushutup-classifier` | `classifier` or `classifier-*` |
 | `framework` | `nodadyoushutup-framework` | `framework` or `framework-*` |
 | `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
 | `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
@@ -91,6 +92,9 @@ Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
 - `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
 - `plugins/compose/skills/compose/SKILL.md` with frontmatter `name: compose`
 - `plugins/compose/commands/compose.md` with frontmatter `name: compose` → `/compose`
+- `plugins/classifier/skills/classifier/SKILL.md` with frontmatter `name: classifier`
+- `plugins/classifier/skills/classifier-decisions/SKILL.md` with frontmatter `name: classifier-decisions`
+- `plugins/classifier/commands/classifier.md` with frontmatter `name: classifier` → `/classifier`
 - `plugins/framework/skills/framework/SKILL.md` with frontmatter `name: framework`
 - `plugins/framework/commands/framework.md` with frontmatter `name: framework` → `/framework`
 - `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
@@ -141,6 +145,7 @@ rule.
 | `grafana` | Dashboards, Explore, incidents, alerting (optional) |
 | `cloudflare` | DNS record craft with destructive gates (optional) |
 | `compose` | Docker Compose layout/ops with destructive gates (optional) |
+| `classifier` | Decision-model MCP craft: destructive-command gate hook + discrete decision consult (optional) |
 | `framework` | Framework monorepo craft: addon isolation/substrate, Docker ops, parity, ceremony hooks, thin host overlays (optional) |
 | `kubernetes` | Agnostic pod/event/log triage (optional; site overlays stay in private `homelab`) |
 | `proxmox` | Proxmox VE inventory + gated VM/LXC ops (optional) |

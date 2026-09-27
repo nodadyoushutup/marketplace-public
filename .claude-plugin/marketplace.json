@@ -442,6 +442,36 @@
       ]
     },
     {
+      "name": "nodadyoushutup-classifier",
+      "source": "./classifier",
+      "description": "Decision-model craft for coding: consult an attached classifier MCP for destructive-command gating and discrete decisions (tier, subagent, scope, rerank), with a beforeShellExecution gate hook.",
+      "version": "0.10.0",
+      "author": {
+        "name": "nodadyoushutup",
+        "email": "admin@nodadyoushutup.com"
+      },
+      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
+      "repository": "https://github.com/nodadyoushutup/marketplace-public",
+      "license": "MIT",
+      "keywords": [
+        "classifier",
+        "kev",
+        "jev",
+        "decision",
+        "hooks",
+        "gating",
+        "rules",
+        "skills",
+        "commands",
+        "mcp"
+      ],
+      "category": "productivity",
+      "tags": [
+        "classifier",
+        "optional"
+      ]
+    },
+    {
       "name": "nodadyoushutup-framework",
       "source": "./framework",
       "description": "Framework monorepo craft: addon isolation/substrate, runtimes/GUI, Docker ops, git/Jira host overlays, parity porting, workflow hooks. Pair with global, code, business-analyst, atlassian, and other marketplace plugins.",
