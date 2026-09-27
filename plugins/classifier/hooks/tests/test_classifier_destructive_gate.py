@@ -64,6 +64,20 @@ class RiskyTests(unittest.TestCase):
 
 
 class DestructiveProbabilityTests(unittest.TestCase):
+    def test_reads_canonical_probabilities_deny(self) -> None:
+        """Kev / System One returns probabilities under answers.<q>."""
+        payload = {
+            "answers": {
+                "gate": {
+                    "type": "choice",
+                    "choice": "deny",
+                    "confidence": 0.01,
+                    "probabilities": {"allow": 0.3835, "deny": 0.6165},
+                }
+            }
+        }
+        self.assertAlmostEqual(gate.destructive_probability(payload) or 0, 0.6165)
+
     def test_reads_deny_from_answers(self) -> None:
         payload = {"answers": {"gate": {"allow": 0.1, "deny": 0.9}}}
         self.assertAlmostEqual(gate.destructive_probability(payload) or 0, 0.9)

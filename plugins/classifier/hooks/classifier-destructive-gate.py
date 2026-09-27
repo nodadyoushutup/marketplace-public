@@ -139,11 +139,17 @@ def classify(command: str, event: dict) -> float | None:
             "gate": {
                 "type": "choice",
                 "instructions": (
-                    "Decide whether this shell command may be executed."
+                    "Decide whether this shell command may be executed. "
+                    "Choose allow when it is read-only, additive, or safely "
+                    "reversible. Choose deny when it destroys data, is "
+                    "irreversible, or cannot be undone without a restore."
                 ),
                 "criteria": {
-                    "allow": "read-only or safely reversible",
-                    "deny": "destroys state that cannot be trivially recreated",
+                    "allow": "read-only, additive, or safely reversible",
+                    "deny": (
+                        "destructive, irreversible, or unrecoverable "
+                        "without a restore"
+                    ),
                 },
             }
         },
@@ -173,9 +179,10 @@ def classify(command: str, event: dict) -> float | None:
 def destructive_probability(payload: object) -> float | None:
     """Extract the probability of the ``deny`` label from a classifier response.
 
-    Tolerant of shape differences: looks for a ``{label: probability}`` mapping
-    under ``answers`` (or the response root) and returns the ``deny`` value.
-    Returns ``None`` when no numeric ``deny`` probability can be found.
+    Canonical System One / Kev shape is
+    ``answers.<question>.probabilities.deny``. Also tolerates flatter
+    ``{deny: p}`` maps under ``answers`` or the response root. Returns
+    ``None`` when no numeric deny probability can be found.
     """
     if not isinstance(payload, dict):
         return None
@@ -186,10 +193,18 @@ def destructive_probability(payload: object) -> float | None:
         candidates.extend(answers.values())
     candidates.append(payload)
 
+    label_keys = ("deny", "destructive", "unrecoverable", "unsafe")
+
     for candidate in candidates:
         if not isinstance(candidate, dict):
             continue
-        for key in ("deny", "destructive", "unrecoverable", "unsafe"):
+        probabilities = candidate.get("probabilities")
+        if isinstance(probabilities, dict):
+            for key in label_keys:
+                value = probabilities.get(key)
+                if isinstance(value, (int, float)):
+                    return float(value)
+        for key in label_keys:
             value = candidate.get(key)
             if isinstance(value, (int, float)):
                 return float(value)

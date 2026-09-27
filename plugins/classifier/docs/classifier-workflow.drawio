@@ -15,7 +15,7 @@
         <mxCell id="legend" value="Legend&#10;&#10;Boxes&#10;blue = work phase&#10;green = finish&#10;gray = START / END / skip&#10;&#10;Lines&#10;black = next step&#10;green = skip / finish" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fillColor=#f5f5f5;strokeColor=#bbbbbb;fontColor=#222222" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="260" height="220" as="geometry"/>
         </mxCell>
-        <mxCell id="ambient" value="AMBIENT — decision MCP&#10;&#10;Discover namespace&#10;never hardcode host&#10;&#10;Rules first, always win&#10;Classifier = second opinion&#10;&#10;Short state only&#10;fail open if unattached" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
+        <mxCell id="ambient" value="AMBIENT — decision MCP&#10;&#10;Discover namespace&#10;never hardcode host&#10;&#10;Prefer *_gate / *_choose / *_score&#10;Rules first, always win&#10;&#10;Shell → hook (HTTP)&#10;Non-shell → *_gate&#10;&#10;Short state · fail open" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;align=left;verticalAlign=top;spacingLeft=14;spacingRight=14;spacingTop=12;spacingBottom=12;fontSize=11;fontStyle=1;fillColor=#eeeeee;strokeColor=#999999;strokeWidth=2;fontColor=#333333" parent="1" vertex="1">
           <mxGeometry x="40" y="300" width="260" height="320" as="geometry"/>
         </mxCell>
 
@@ -28,7 +28,7 @@
         <mxCell id="skip" value="skip — no classifier&#10;use deterministic rules;&#10;do not invent a call" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#e0e0e0;strokeColor=#666666;fontColor=#222222" parent="1" vertex="1">
           <mxGeometry x="400" y="160" width="320" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="act" value="rules → classifier&#10;hook gates shell;&#10;MCP for tier/scope/rerank" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
+        <mxCell id="act" value="rules → classifier&#10;hook gates shell;&#10;MCP *_choose/*_score/*_gate&#10;coding + generic decisions" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#12305B" parent="1" vertex="1">
           <mxGeometry x="780" y="320" width="380" height="120" as="geometry"/>
         </mxCell>
         <mxCell id="end_ok" value="END — decision +&#10;confidence (or default)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacingLeft=12;spacingRight=12;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#12401A" parent="1" vertex="1">

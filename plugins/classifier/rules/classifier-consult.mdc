@@ -1,49 +1,57 @@
 ---
 description: >-
-  Default: consult the attached classifier MCP for ambiguous destructive commands
-  and discrete coding decisions. Discover the MCP namespace; never hardcode a
-  host or invent a call. Skip entirely when no classifier MCP is attached.
+  Default: auto-consult the attached classifier MCP for ambiguous discrete
+  decisions and non-shell irreversible actions; shell gating is the hook.
+  Coding-primary, generic-capable. Skip when no classifier MCP is attached.
 alwaysApply: true
 ---
 
 # Classifier consult
 
 The session may attach a **classifier** MCP — a small decision model ("kev/jev")
-that returns a probability per typed question. Treat it as a signal, not an
-oracle, and as optional infrastructure.
+that returns calibrated probabilities for typed questions. Optional
+infrastructure: treat it as a signal, not an oracle.
 
 ## Gate
 
-If no classifier MCP is attached to this session, **skip this rule** — no
-classifier calls. Use the deterministic rules already in `code-workflow` and
-`global-execute-first`, and continue normally. A missing classifier is not a
-blocker.
+If no classifier MCP is attached, **skip this rule** — no classifier calls. Use
+deterministic rules (`code-workflow`, `global-execute-first`, host policy) and
+continue. A missing classifier is not a blocker.
 
 ## Discover (once per session)
 
 1. List the session's MCP tools.
-2. Find the namespace whose tools build a state+question decision call — names
-   like `kev_gate`, `*_choose`, `*_score`, `*_ask`, `*_status`, or a raw
-   `/systemone` passthrough. The exact namespace varies per host; do not assume.
-3. Cache it for the session. Never hardcode a host, port, URL, or key.
+2. Find the namespace with `*_gate` / `*_choose` / `*_score` (plus `*_ask` /
+   `*_status` or raw `/systemone`). Namespace varies; do not assume.
+3. Cache it. Never hardcode a host, port, URL, or key.
 
-## Default
+## Auto-consult (when attached)
 
-- **Destructive commands**: the attached `beforeShellExecution` hook consults the
-  classifier automatically; you do not need to call it yourself. Deterministic
-  deny rules always run first and always win.
-- **Discrete decisions** (tier, subagent pick, scope, rerank): narrow options
-  with the written rules first, then consult the classifier only for the
-  ambiguous middle. Load `classifier-decisions` for thresholds.
-- **Short state only** — a command line, a diff hunk, a one-line ask. Long states
-  degrade confidence.
-- **Confidence, not argmax** — act above the per-type threshold; escalate or take
-  the deterministic default below it.
+| Situation | Action |
+| --- | --- |
+| Risky **shell** command | Do nothing extra — `beforeShellExecution` hook gates it |
+| Irreversible **non-shell** action (MCP mutate, wipe, restore-overwrite) when rules do not already hard-deny | Call `*_gate` before acting; escalate if not `allowed` |
+| Ambiguous discrete decision (2–5 real options): intensity tier, subagent, approach fork, route, approve/reject | Narrow with rules, then `*_choose` |
+| Scope / multi-criterion critique / shortlist rerank | Narrow, then `*_score` |
+| Rules already force one answer, or the edit is trivia | Do **not** call |
+
+Prefer opinionated tools (`*_gate` / `*_choose` / `*_score`) over raw `*_ask`.
+Load `classifier-decisions` for thresholds and worked shapes.
+
+## Defaults
+
+- **Short state only** — command line, one-line ask, diff hunk, or option list.
+- **Confidence, not argmax** — act above the per-type threshold; else
+  deterministic default or escalate.
+- **Fail open** — unreachable/slow/error → continue on the deterministic path.
+- Coding is the primary workload; the same tools apply to generic
+  route/approve/rank decisions outside coding repos.
 
 ## Refuse
 
 - Never fabricate probabilities, answers, or an MCP that is not attached.
 - Never put secrets, tokens, credentials, or private payloads into classifier
   state.
-- Never let the classifier override a deterministic safety rule.
-- Never block or wedge work waiting on the classifier — fail open and continue.
+- Never let the classifier override a deterministic safety rule or an explicit
+  user/host deny.
+- Never block or wedge work waiting on the classifier.

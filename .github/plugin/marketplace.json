@@ -441,7 +441,7 @@
     },
     {
       "name": "nodadyoushutup-classifier",
-      "description": "Decision-model craft for coding: consult an attached classifier MCP for destructive-command gating and discrete decisions (tier, subagent, scope, rerank), with a beforeShellExecution gate hook.",
+      "description": "Decision-model craft (coding-primary, generic-capable): consult an attached classifier MCP for destructive gating and discrete decisions, with a beforeShellExecution gate hook.",
       "version": "0.10.0",
       "source": "./plugins/classifier",
       "author": {

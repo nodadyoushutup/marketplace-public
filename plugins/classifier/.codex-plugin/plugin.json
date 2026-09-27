@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-classifier",
-  "version": "0.10.0",
-  "description": "Decision-model craft for coding: consult an attached classifier MCP for destructive-command gating and discrete decisions (tier, subagent, scope, rerank).",
+  "version": "0.11.0",
+  "description": "Decision-model craft (coding-primary, generic-capable): consult an attached classifier MCP for destructive gating and discrete decisions.",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
@@ -25,7 +25,7 @@
   "commands": "./commands/",
   "interface": {
     "displayName": "Classifier",
-    "shortDescription": "Consult an attached classifier MCP for destructive-command gating and discrete coding decisions.",
+    "shortDescription": "Consult an attached classifier MCP for destructive gating and discrete decisions (coding + generic).",
     "developerName": "nodadyoushutup",
     "category": "Productivity",
     "websiteURL": "https://github.com/nodadyoushutup/marketplace-public",
