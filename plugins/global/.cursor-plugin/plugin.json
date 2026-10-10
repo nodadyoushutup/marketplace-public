@@ -1,7 +1,7 @@
 {
   "name": "nodadyoushutup-global",
   "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "author": {
     "name": "nodadyoushutup",
     "email": "admin@nodadyoushutup.com"
