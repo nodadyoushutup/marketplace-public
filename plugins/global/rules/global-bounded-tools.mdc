@@ -1,0 +1,20 @@
+---
+description: In a long thread, do the latest message with sliced tool output
+alwaysApply: true
+---
+
+# Bounded tools in a long thread
+
+The 40-call cap does not fire on most expensive follow-ups. Those turns already carry a large prompt and then add more.
+
+## Latest message
+
+When the thread already has tool results, the latest user message is the whole task. Finish that and stop. Do not reopen an earlier decision or start a side investigation.
+
+A status question or a yes/no gets at most one tool call, then the answer.
+
+## Sliced output
+
+Read a line range or a single symbol. Do not read a whole file. Do not read a file you already read in this turn.
+
+Return a count, a filter, or the few lines that answer the question. Do not print a full log, a full query result, or a full command output.

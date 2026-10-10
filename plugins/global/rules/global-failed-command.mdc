@@ -1,0 +1,14 @@
+---
+description: Do not rerun a shell command that just failed
+alwaysApply: true
+---
+
+# Failed shell commands
+
+A failed shell command often still has status OK. The failure is in the output: a traceback, "command not found", or a non-zero exit.
+
+When a shell command fails:
+
+1. Do not run that same command again.
+2. Change the command, or stop and report the error in the reply.
+3. Two identical failures ends that approach for this turn.
