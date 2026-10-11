@@ -59,7 +59,6 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-grafana** | `plugins/grafana/` | Dashboards, Explore, incidents, alerting |
 | **nodadyoushutup-cloudflare** | `plugins/cloudflare/` | DNS record craft with destructive gates |
 | **nodadyoushutup-compose** | `plugins/compose/` | Docker Compose layout/ops + destructive gates |
-| **nodadyoushutup-framework** | `plugins/framework/` | Framework monorepo craft (addons, Docker ops, parity, ceremony hooks) |
 | **nodadyoushutup-kubernetes** | `plugins/kubernetes/` | Agnostic pod/event/log triage |
 | **nodadyoushutup-proxmox** | `plugins/proxmox/` | Proxmox VE inventory + gated VM ops |
 | **nodadyoushutup-argocd** | `plugins/argocd/` | Argo CD apps + gated sync |

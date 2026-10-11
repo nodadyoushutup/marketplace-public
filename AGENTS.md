@@ -17,7 +17,7 @@ name; Copilot/Codex catalogs use `./plugins/<short>`.
 Homelab **homelab** infra craft ships from the sibling
 [`marketplace-private`](https://github.com/nodadyoushutup/marketplace-private)
 repo — do not re-add `plugins/homelab/` here. Framework monorepo craft lives
-in this public marketplace as `plugins/framework/`.
+in the framework repo `.cursor/` tree — do not re-add `plugins/framework/` here.
 
 ## Plugin prefix rule (required)
 
@@ -46,7 +46,6 @@ Commands follow the same rule **except** short slash UX names documented below
 | `grafana` | `nodadyoushutup-grafana` | `grafana` or `grafana-*` |
 | `cloudflare` | `nodadyoushutup-cloudflare` | `cloudflare` or `cloudflare-*` |
 | `compose` | `nodadyoushutup-compose` | `compose` or `compose-*` |
-| `framework` | `nodadyoushutup-framework` | `framework` or `framework-*` |
 | `kubernetes` | `nodadyoushutup-kubernetes` | `kubernetes` or `kubernetes-*` |
 | `proxmox` | `nodadyoushutup-proxmox` | `proxmox` or `proxmox-*` |
 | `argocd` | `nodadyoushutup-argocd` | `argocd` or `argocd-*` |
@@ -91,8 +90,6 @@ Homelab (`homelab` / `homelab-*`) lives only in **marketplace-private**.
 - `plugins/cloudflare/commands/cloudflare.md` → `/cloudflare`
 - `plugins/compose/skills/compose/SKILL.md` with frontmatter `name: compose`
 - `plugins/compose/commands/compose.md` with frontmatter `name: compose` → `/compose`
-- `plugins/framework/skills/framework/SKILL.md` with frontmatter `name: framework`
-- `plugins/framework/commands/framework.md` with frontmatter `name: framework` → `/framework`
 - `plugins/kubernetes/commands/kubernetes.md` → `/kubernetes`
 
 

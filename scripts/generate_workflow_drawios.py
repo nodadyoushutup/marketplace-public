@@ -142,19 +142,6 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "resolve dir → config&#10;ops via compose CLI;&#10;safety on down -v",
         "end_ok": "END — project +&#10;services (no secrets)",
     },
-    "framework": {
-        "title": "Framework Workflow",
-        "ambient": (
-            "AMBIENT — monorepo&#10;&#10;"
-            "Addon isolation&#10;substrate · modularity&#10;&#10;"
-            "Pair public plugins&#10;global · code · atlassian&#10;&#10;"
-            "Ceremony hooks floor&#10;No secret dumps in chat"
-        ),
-        "gate": "gate · framework?&#10;addon / docker / parity /&#10;ceremony / monorepo ask",
-        "skip": "skip — not framework&#10;use other public plugins;&#10;do not invent overlays",
-        "act": "route via load map&#10;isolation · docker ·&#10;parity · host overlays",
-        "end_ok": "END — change +&#10;ceremony evidence",
-    },
     "kubernetes": {
         "title": "Kubernetes Triage Workflow",
         "ambient": (

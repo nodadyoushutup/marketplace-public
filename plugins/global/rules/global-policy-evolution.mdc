@@ -46,7 +46,6 @@ that owns the asset (see root `AGENTS.md`):
 | `grafana-*` (or exact `grafana`) | `plugins/grafana/` |
 | `cloudflare-*` (or exact `cloudflare`) | `plugins/cloudflare/` |
 | `compose-*` (or exact `compose`) | `plugins/compose/` |
-| `framework-*` | `plugins/framework/` |
 | `kubernetes-*` (or exact `kubernetes`) | `plugins/kubernetes/` |
 | `proxmox-*` (or exact `proxmox`) | `plugins/proxmox/` |
 | `argocd-*` (or exact `argocd`) | `plugins/argocd/` |

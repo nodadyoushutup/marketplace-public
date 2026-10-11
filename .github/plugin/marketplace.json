@@ -6,7 +6,7 @@
     "url": "https://github.com/nodadyoushutup"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 global posture, code standards, framework monorepo craft, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, \u2026).",
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, \u2026).",
     "version": "0.11.1"
   },
   "plugins": [
@@ -436,31 +436,6 @@
       "category": "productivity",
       "tags": [
         "compose",
-        "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-framework",
-      "description": "Framework monorepo craft: addon isolation/substrate, runtimes/GUI, Docker ops, git/Jira host overlays, parity porting, workflow hooks. Pair with global, code, business-analyst, atlassian, and other marketplace plugins.",
-      "version": "0.11.0",
-      "source": "./plugins/framework",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "keywords": [
-        "framework",
-        "addons",
-        "isolation",
-        "docker",
-        "hooks"
-      ],
-      "category": "productivity",
-      "tags": [
-        "framework",
         "optional"
       ]
     },

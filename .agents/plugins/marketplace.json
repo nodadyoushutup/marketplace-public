@@ -243,20 +243,6 @@
       "category": "Productivity"
     },
     {
-      "name": "nodadyoushutup-framework",
-      "description": "Framework monorepo craft: addon isolation/substrate, runtimes/GUI, Docker ops, git/Jira host overlays, parity porting, workflow hooks. Pair with global, code, business-analyst, atlassian, and other marketplace plugins.",
-      "version": "0.11.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/framework"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
       "name": "nodadyoushutup-kubernetes",
       "description": "Agnostic Kubernetes triage craft: pods, events, logs, and node signals via MCP. Prefer Kubernetes MCP; no destructive cluster changes without an explicit ask.",
       "version": "0.10.0",
