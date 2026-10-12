@@ -116,10 +116,12 @@ checkout of this repo. Then Step 2 — do not retry a different directory.
 
 ## Step 2 — Emergency fallback
 
-1. If the repo declares a non-blank worktree parent (for example `WORKTREE_DIR`
-   in a gitignored env file), follow that overlay’s layout. Edit by absolute
-   path. Still no `move_agent_to_root`.
-2. If blank, edit the open checkout on the current branch. Say so in one
+1. If the host overlay forbids git worktrees, stop. Edit the open checkout
+   on the current branch. Do not invent a directory.
+2. If `git worktree add` failed and the host overlay names an emergency clone
+   parent, follow that overlay. Edit by absolute path. Still no
+   `move_agent_to_root`.
+3. Otherwise edit the open checkout on the current branch. Say so in one
    sentence. Do not invent a directory.
 
 ## Step 3 — Setup and finish

@@ -19,22 +19,19 @@ aims at a different project or stack.
 ## Resolve `$HOST` (once per session, then reuse)
 
 1. Reuse `$HOST` if already resolved this session.
-2. Else read gitignored `project.env` key `DEV_PUBLIC_HOST` (or the project's
-   equivalent public-host env). Use it only if non-blank and non-loopback.
-3. Else detect (do not ask first):
+2. Else detect (do not ask first):
 
 ```bash
 ip -4 route get 1.1.1.1 | awk '{for(i=1;i<=NF;i++) if($i=="src"){print $(i+1); exit}}'
 ```
 
-4. Else, if AgentMemory is connected/ready, recall preference (`user-facing
+3. Else, if AgentMemory is connected/ready, recall preference (`user-facing
    host URL` / `dev host address`) and use it only if non-loopback.
-5. On new detect or user correction: prefer writing `DEV_PUBLIC_HOST` into
-   `project.env`. If AgentMemory is available, also `memory_save` type
-   `preference`, concepts `host-url`, `user-facing-host`. Never write that IP
-   into tracked files.
-6. If detect and prefs both fail: ask once, then save via `project.env` and/or
-   memory when available.
+4. On new detect or user correction: if AgentMemory is available, `memory_save`
+   type `preference`, concepts `host-url`, `user-facing-host`. Never write that
+   IP into tracked files.
+5. If detect and memory both fail: ask once, then save via memory when
+   available.
 
 Use the port that matches the app you are actually verifying.
 

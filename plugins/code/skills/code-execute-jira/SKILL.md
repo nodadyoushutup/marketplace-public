@@ -52,10 +52,12 @@ present. Do not invent product-addon identity in portable guidance.
    (Cursor: `rename_chat`). This command is the operator’s explicit rename
    request for this chat only.
 5. **Status** — load `atlassian-jira-status`. Move backlog → board only when
-   a board id is already known from host prefs (never invent). Then
-   transition to `In Progress`. Never jump to In Progress from backlog
-   alone when board moves apply.
-6. **Isolate** — load `code-worktrees`. Branch and worktree name = the issue
+   the operator named a board id (never invent). Then transition to
+   `In Progress`. Never jump to In Progress from backlog alone when board
+   moves apply.
+6. **Isolate** — If the host overlay forbids git worktrees, branch in the
+   open checkout with the issue-key name and do not create a worktree.
+   Otherwise load `code-worktrees`. Branch and worktree name = the issue
    key. Record the live checkout path. Do not call `move_agent_to_root`.
    Stay on the open checkout only when isolation is off or creation fails
    with no host fallback.
