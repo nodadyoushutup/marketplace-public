@@ -28,18 +28,6 @@ SPECS: dict[str, dict[str, str]] = {
         "act": "drive browser&#10;IDE MCP tools first;&#10;CLI only if MCP unusable",
         "end_ok": "END — URL + assertion&#10;(+ screenshot path if taken)",
     },
-    "github": {
-        "title": "GitHub Workflow",
-        "ambient": (
-            "AMBIENT — agnostic SCM&#10;&#10;"
-            "Never invent&#10;owner/repo · PR · workflow id&#10;&#10;"
-            "MCP first when ready&#10;Pair: code-workflow · code-yaml"
-        ),
-        "gate": "gate · GitHub work?&#10;PR / checks / comments /&#10;Actions ask or named PR",
-        "skip": "skip — no GitHub&#10;ordinary coding; do not&#10;open PRs to cover work",
-        "act": "act via MCP&#10;checks · comments ·&#10;workflow YAML hygiene",
-        "end_ok": "END — evidence&#10;(check conclusion / URL)",
-    },
     "jenkins": {
         "title": "Jenkins Workflow",
         "ambient": (
@@ -154,18 +142,6 @@ SPECS: dict[str, dict[str, str]] = {
         "skip": "skip — no cluster&#10;ordinary coding; do not&#10;kubectl for sport",
         "act": "triage via MCP&#10;status · events · logs;&#10;safety for delete/exec",
         "end_ok": "END — diagnosis&#10;+ next action",
-    },
-    "drawio": {
-        "title": "Drawio Craft Workflow",
-        "ambient": (
-            "AMBIENT — .drawio&#10;&#10;"
-            "Layout contract first&#10;no overlap · bus edges&#10;&#10;"
-            "Author vs repair&#10;editor triage ≠ rewrite"
-        ),
-        "gate": "gate · diagram work?&#10;new / redesign / repair&#10;or named .drawio",
-        "skip": "skip — no diagram&#10;ordinary coding",
-        "act": "author or repair&#10;drawio-layout + recipes;&#10;triage editor false alarms",
-        "end_ok": "END — readable graph&#10;AABB-verified edges",
     },
     "lucidchart": {
         "title": "Lucidchart SI Workflow",

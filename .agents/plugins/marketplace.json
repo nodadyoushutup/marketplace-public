@@ -5,82 +5,12 @@
   },
   "plugins": [
     {
-      "name": "nodadyoushutup-global",
-      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
-      "version": "0.12.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/global"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nodadyoushutup-code",
-      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; agnostic secure-coding; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
-      "version": "0.13.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/code"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nodadyoushutup-business-analyst",
-      "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
-      "version": "0.10.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/business-analyst"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
       "name": "nodadyoushutup-agentmemory",
       "description": "Gated AgentMemory MCP craft: lean always-on recall/capture rules, on-demand tool routing, and ops skill for slots/actions/mesh.",
       "version": "0.10.0",
       "source": {
         "source": "local",
         "path": "./plugins/agentmemory"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nodadyoushutup-atlassian",
-      "description": "Unified Atlassian craft: Jira create gates and issue types plus Confluence page structure, updates, and draw.io attach pairing.",
-      "version": "0.10.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/atlassian"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nodadyoushutup-github",
-      "description": "Agnostic GitHub craft: PR checks, PR/issue comments, Actions workflow hygiene, and CI-from-main reminders. No product-specific pipelines.",
-      "version": "0.10.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/github"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -109,20 +39,6 @@
       "source": {
         "source": "local",
         "path": "./plugins/browser"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nodadyoushutup-drawio",
-      "description": "Author and repair clean .drawio diagrams (lanes, non-overlapping boxes, edge corridors) plus Cursor custom-editor false-alarm triage.",
-      "version": "0.10.0",
-      "source": {
-        "source": "local",
-        "path": "./plugins/drawio"
       },
       "policy": {
         "installation": "AVAILABLE",

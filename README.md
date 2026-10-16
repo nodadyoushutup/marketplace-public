@@ -10,13 +10,15 @@
 Public marketplace of portable Agent **rules**, **skills**, and **agents** for
 **Claude Code**, **Cursor**, **GitHub Copilot**, and **OpenAI Codex**.
 
+Core posture, coding, planning, Atlassian, GitHub, and draw.io craft moved to
+[`archentic/marketplace`](https://github.com/archentic/marketplace). This repo
+keeps the optional infra and service stacks; pair it with that marketplace.
+
 ## Install — Claude Code
 
 ```shell
 /plugin marketplace add nodadyoushutup/marketplace-public
-/plugin install nodadyoushutup-global@nodadyoushutup-marketplace-public
-/plugin install nodadyoushutup-code@nodadyoushutup-marketplace-public
-# optional plugins use the same @nodadyoushutup-marketplace-public form
+/plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace-public
 /reload-plugins
 ```
 
@@ -24,16 +26,13 @@ Public marketplace of portable Agent **rules**, **skills**, and **agents** for
 
 1. Open **Dashboard → Settings → Plugins**.
 2. Import: `https://github.com/nodadyoushutup/marketplace-public`
-3. Install **nodadyoushutup-global** + **nodadyoushutup-code**, plus optional
-   plugins as needed.
+3. Install the plugins you need.
 
 ## Install — GitHub Copilot CLI
 
 ```shell
 copilot plugin marketplace add nodadyoushutup/marketplace-public
-copilot plugin install nodadyoushutup-global@nodadyoushutup-marketplace-public
-copilot plugin install nodadyoushutup-code@nodadyoushutup-marketplace-public
-# optional plugins use the same @nodadyoushutup-marketplace-public form
+copilot plugin install nodadyoushutup-<short>@nodadyoushutup-marketplace-public
 ```
 
 ## Install — OpenAI Codex
@@ -45,19 +44,13 @@ codex plugin marketplace add nodadyoushutup/marketplace-public
 ## Plugins
 
 Marketplace `name` is `nodadyoushutup-<short>`; folders and asset prefixes stay
-short (`code-*`, `global-*`, …).
+short (`jenkins-*`, `vault-*`, …).
 
 | Marketplace id | Folder | What it is |
 | --- | --- | --- |
-| **nodadyoushutup-global** | `plugins/global/` | Standing posture, writing/policy craft |
-| **nodadyoushutup-code** | `plugins/code/` | Language + framework standards (React/Next/Flask/FastAPI, YAML/K8s), secure coding, Conventional Commits, coding workflow, agents |
-| **nodadyoushutup-business-analyst** | `plugins/business-analyst/` | Business analysis, planner, external researcher |
 | **nodadyoushutup-agentmemory** | `plugins/agentmemory/` | Gated AgentMemory recall/capture (+ on-demand ops) |
-| **nodadyoushutup-atlassian** | `plugins/atlassian/` | Unified Jira + Confluence craft |
-| **nodadyoushutup-github** | `plugins/github/` | Agnostic GitHub PR checks/comments + Actions CI craft |
 | **nodadyoushutup-jenkins** | `plugins/jenkins/` | Agnostic Jenkins builds + pipeline CI craft |
 | **nodadyoushutup-browser** | `plugins/browser/` | Browser QA (IDE browser → CLI) |
-| **nodadyoushutup-drawio** | `plugins/drawio/` | `.drawio` author/repair + editor triage |
 | **nodadyoushutup-lucidchart** | `plugins/lucidchart/` | Lucidchart Standard Import author/repair |
 | **nodadyoushutup-google-workspace** | `plugins/google-workspace/` | Gmail + Drive + Calendar + Docs/Sheets |
 | **nodadyoushutup-google-cloud** | `plugins/google-cloud/` | GCP projects + Compute/GKE + GCS |
@@ -76,11 +69,10 @@ short (`code-*`, `global-*`, …).
 | **nodadyoushutup-fortigate** | `plugins/fortigate/` | FortiGate inventory + gated policies |
 | **nodadyoushutup-yarr** | `plugins/yarr/` | *arr / Plex / qBit / Seerr fleet |
 
-Plugins may also ship **commands** under `plugins/<short>/commands/` (`/deslop`,
-`/refactor`, `/business-analyst`, `/atlassian`, `/jira`, `/confluence`,
-`/github`, `/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`,
-`/vault`, `/grafana`, `/cloudflare`, `/compose`, `/framework`, `/kubernetes`, `/proxmox`,
-`/argocd`, `/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
+Plugins may also ship **commands** under `plugins/<short>/commands/`
+(`/jenkins`, `/google-workspace`, `/google-cloud`, `/freshservice`, `/vault`,
+`/grafana`, `/cloudflare`, `/compose`, `/kubernetes`, `/proxmox`, `/argocd`,
+`/prometheus`, `/graylog`, `/minio`, `/velero`, `/fortigate`, `/yarr`, …).
 
 ## Catalog paths
 

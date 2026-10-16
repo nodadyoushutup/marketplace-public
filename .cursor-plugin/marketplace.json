@@ -5,99 +5,11 @@
     "email": "admin@nodadyoushutup.com"
   },
   "metadata": {
-    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 global posture, code standards, and optional stacks (Google, Freshservice, Vault, Grafana, Cloudflare, Kubernetes, \u2026).",
+    "description": "Public portable agent plugins for Claude Code, Cursor, GitHub Copilot, and OpenAI Codex \u2014 optional stacks (AgentMemory, Jenkins, browser, Lucidchart, Google, Freshservice, Vault, Grafana, Cloudflare, Compose, Kubernetes, Proxmox, Argo CD, \u2026). Pair with archentic/marketplace for global, code, business-analyst, atlassian, github, and drawio.",
     "version": "0.11.1",
     "pluginRoot": "./plugins"
   },
   "plugins": [
-    {
-      "name": "nodadyoushutup-global",
-      "source": "global",
-      "description": "Core posture and writing/policy craft: execute-first, MCP-first, host URLs, STE/writing skills. Pair with business-analyst for planning and code for coding work (incl. Conventional Commits).",
-      "version": "0.12.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/global/assets/avatar.png",
-      "keywords": [
-        "posture",
-        "workflow",
-        "skills"
-      ],
-      "category": "productivity",
-      "tags": [
-        "global",
-        "core"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-code",
-      "source": "code",
-      "description": "Coding standards and workflow: language rules (incl. YAML/Kubernetes); React/Next.js/Flask/FastAPI; agnostic secure-coding; Conventional Commits; refactor/debug/verify skills; worktrees, merge conflicts; coding agents.",
-      "version": "0.13.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/code/assets/avatar.png",
-      "keywords": [
-        "code",
-        "python",
-        "javascript",
-        "terraform",
-        "yaml",
-        "kubernetes",
-        "markdown",
-        "git",
-        "worktrees",
-        "security",
-        "skills",
-        "rules",
-        "agents",
-        "commits",
-        "react",
-        "nextjs",
-        "flask",
-        "fastapi"
-      ],
-      "category": "productivity",
-      "tags": [
-        "code",
-        "languages"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-business-analyst",
-      "source": "business-analyst",
-      "description": "Business analysis and planning: BA brief skill, planner for ambiguous multi-step work, and external researcher. Pair with global (posture) and code (implementation).",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/business-analyst/assets/avatar.png",
-      "keywords": [
-        "business-analyst",
-        "planning",
-        "requirements",
-        "agents"
-      ],
-      "category": "productivity",
-      "tags": [
-        "business-analyst",
-        "optional"
-      ]
-    },
     {
       "name": "nodadyoushutup-agentmemory",
       "source": "agentmemory",
@@ -119,60 +31,6 @@
       "category": "productivity",
       "tags": [
         "memory",
-        "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-atlassian",
-      "source": "atlassian",
-      "description": "Unified Atlassian craft: Jira create gates and issue types plus Confluence page structure, updates, and draw.io attach pairing.",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/atlassian/assets/avatar.png",
-      "keywords": [
-        "atlassian",
-        "jira",
-        "confluence",
-        "tracker",
-        "wiki",
-        "rules"
-      ],
-      "category": "productivity",
-      "tags": [
-        "atlassian",
-        "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-github",
-      "source": "github",
-      "description": "Agnostic GitHub craft: PR checks, PR/issue comments, Actions workflow hygiene, and CI-from-main reminders. No product-specific pipelines.",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/github/assets/avatar.png",
-      "keywords": [
-        "github",
-        "pull-request",
-        "actions",
-        "ci",
-        "checks",
-        "comments"
-      ],
-      "category": "productivity",
-      "tags": [
-        "github",
         "optional"
       ]
     },
@@ -222,32 +80,6 @@
       "tags": [
         "browser",
         "optional"
-      ]
-    },
-    {
-      "name": "nodadyoushutup-drawio",
-      "source": "drawio",
-      "description": "Author and repair clean .drawio diagrams (lanes, non-overlapping boxes, edge corridors) plus Cursor custom-editor false-alarm triage.",
-      "version": "0.10.0",
-      "author": {
-        "name": "nodadyoushutup",
-        "email": "admin@nodadyoushutup.com"
-      },
-      "homepage": "https://github.com/nodadyoushutup/marketplace-public",
-      "repository": "https://github.com/nodadyoushutup/marketplace-public",
-      "license": "MIT",
-      "logo": "plugins/drawio/assets/avatar.png",
-      "keywords": [
-        "drawio",
-        "diagrams",
-        "layout",
-        "cursor"
-      ],
-      "category": "productivity",
-      "tags": [
-        "drawio",
-        "optional",
-        "cursor"
       ]
     },
     {

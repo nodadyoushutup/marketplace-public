@@ -22,13 +22,10 @@ CATALOGS = {
 }
 
 # Commands allowed without the plugin prefix (short slash UX).
-SHORT_COMMANDS: dict[str, frozenset[str]] = {
-    "code": frozenset({"deslop", "refactor"}),
-    "atlassian": frozenset({"jira", "confluence"}),
-}
+SHORT_COMMANDS: dict[str, frozenset[str]] = {}
 
 # Plugins that do not need a docs/*-workflow.drawio (standing posture only).
-WORKFLOW_EXEMPT = frozenset({"global"})
+WORKFLOW_EXEMPT: frozenset[str] = frozenset()
 
 FRONTMATTER_NAME = re.compile(
     r"(?m)^---\s*\n(?:.*\n)*?^name:\s*['\"]?([^\n'\"]+)['\"]?\s*$",
